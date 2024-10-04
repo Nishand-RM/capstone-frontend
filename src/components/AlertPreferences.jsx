@@ -1,4 +1,4 @@
-// frontend/src/components/AlertPreferences.js
+// frontend/src/components/AlertPreferences.jsx
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -28,7 +28,7 @@ const AlertPreferences = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     if (!email) {
       setMessage('Please enter a valid email.');
       return;
@@ -49,6 +49,9 @@ const AlertPreferences = () => {
         setEmail('');
         setSelectedCategories(['politics', 'sports', 'technology']);
         setFrequency('immediate');
+
+        // Store email in localStorage for later use
+        localStorage.setItem('userEmail', response.data.email);
       }
     } catch (error) {
       console.error('Error saving preferences:', error);
@@ -103,44 +106,6 @@ const AlertPreferences = () => {
             <option value="daily">Daily</option>
           </select>
         </div>
-
-        {/* Future Extension: Notification Types */}
-        {/* <div className="mb-4">
-          <label className="block mb-2 font-medium">Notification Types:</label>
-          <div className="flex flex-wrap">
-            <label className="mr-4 mb-2 flex items-center">
-              <input
-                type="checkbox"
-                value="email"
-                checked={notificationTypes.includes('email')}
-                onChange={handleNotificationTypeChange}
-                className="mr-2"
-              />
-              Email
-            </label>
-            <label className="mr-4 mb-2 flex items-center">
-              <input
-                type="checkbox"
-                value="sms"
-                checked={notificationTypes.includes('sms')}
-                onChange={handleNotificationTypeChange}
-                className="mr-2"
-              />
-              SMS
-            </label>
-            <label className="mr-4 mb-2 flex items-center">
-              <input
-                type="checkbox"
-                value="push"
-                checked={notificationTypes.includes('push')}
-                onChange={handleNotificationTypeChange}
-                className="mr-2"
-              />
-              Push
-            </label>
-          </div>
-        </div> */}
-
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
