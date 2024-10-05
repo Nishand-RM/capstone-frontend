@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/news');
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/news`);
       setNews(response.data);
       setLoading(false);
     } catch (err) {
