@@ -1,5 +1,3 @@
-// frontend/src/App.jsx
-
 import React from 'react';
 import AlertPreferences from './components/AlertPreferences';
 import Dashboard from './components/Dashboard';
@@ -15,7 +13,7 @@ const App = () => {
       <main className="max-w-4xl mx-auto">
         <AlertPreferences />
         <Dashboard />
-        <Notifications /> {/* Added Notifications Component */}
+        <Notifications /> 
       </main>
     </div>
   );

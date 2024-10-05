@@ -1,5 +1,3 @@
-// frontend/src/components/Dashboard.js
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -23,7 +21,6 @@ const Dashboard = () => {
   useEffect(() => {
     fetchNews();
 
-    // Optional: Refresh news every 10 minutes
     const interval = setInterval(fetchNews, 10 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);

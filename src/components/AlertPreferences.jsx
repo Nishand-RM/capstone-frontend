@@ -1,5 +1,3 @@
-// frontend/src/components/AlertPreferences.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -40,7 +38,7 @@ const AlertPreferences = () => {
         preferences: {
           categories: selectedCategories,
           frequency,
-          notificationTypes: ['email'], // Extendable for SMS, Push
+          notificationTypes: ['email'], 
         },
       });
 
