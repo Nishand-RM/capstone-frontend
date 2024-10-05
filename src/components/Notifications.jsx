@@ -21,7 +21,7 @@ const Notifications = () => {
   const fetchNotifications = async (userEmail) => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/news/notifications', {
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/news/notifications`, {
         params: { email: userEmail },
       });
 
